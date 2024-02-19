@@ -37,3 +37,10 @@ docker run -p 8080:8080 true-beacon-frontend
 Frontend - `localhost:8080`
 
 Backend - `localhost:8000`
+
+### API
+https://documenter.getpostman.com/view/16126459/2sA2r9UN66 
+
+Deployed baseuri for backend only - http://65.0.129.57:8000
+
+Note: If the deployed url is not working do please test it locally
