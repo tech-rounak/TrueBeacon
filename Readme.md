@@ -38,6 +38,13 @@ Frontend - `localhost:8080`
 
 Backend - `localhost:8000`
 
+## Deployed URL 
+#### frontend 
+http://15.206.91.56:8080
+
+#### backend 
+http://65.0.129.57:8000
+
 ### API
 https://documenter.getpostman.com/view/16126459/2sA2r9UN66 
 
