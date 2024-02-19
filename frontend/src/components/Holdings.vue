@@ -58,7 +58,7 @@ import axios from "axios";
 import Card from "./Card.vue";
 import { onMounted, ref } from "vue";
 import { notification } from "ant-design-vue";
-
+import { getbaseURI } from "./../utils"
 const totalDayPL = ref(0);
 const totalCurrVal = ref(0);
 const totalAvgPrice = ref(0);
@@ -98,7 +98,7 @@ onMounted(() => {
   FetchHoldings();
 });
 const FetchHoldings = () => {
-  const apiURL = "http://localhost:8000/portfolio/holdings";
+  const apiURL = getbaseURI()+"/portfolio/holdings";
 
   axios
     .get(apiURL, {

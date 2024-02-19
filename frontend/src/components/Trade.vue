@@ -37,6 +37,8 @@
 import { reactive, ref, toRaw } from "vue";
 import { notification } from "ant-design-vue";
 import axios from "axios";
+import { getbaseURI} from "./../utils"
+
 const formRef = ref();
 const labelCol = {
   span: 5,
@@ -100,7 +102,7 @@ const resetForm = () => {
 };
 
 const PlaceOrder = (formData) => {
-  const url = "http://localhost:8000/place/order";
+  const url = getbaseURI()+"/place/order";
   axios
     .post(url, formData, {
       headers: {

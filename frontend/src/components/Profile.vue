@@ -34,7 +34,7 @@ import { ref, onMounted } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
 import { notification } from "ant-design-vue";
-
+import { getbaseURI} from "./../utils"
 const router = useRouter();
 
 const UserName = ref("");
@@ -47,7 +47,8 @@ onMounted(() => {
   GetProfileData();
 });
 const GetProfileData = () => {
-  const apiURL = "http://localhost:8000/users/profile";
+  const apiURL = getbaseURI()+"/users/profile";
+
 
   axios
     .get(apiURL, {
@@ -66,7 +67,7 @@ const GetProfileData = () => {
     .catch((error) => {
       console.error("Error while fetching profile:", error);
       notification["error"]({
-        message: "Signup Failed",
+        message: "Could Not get profile data",
         description: error?.response?.data?.error,
       });
     });

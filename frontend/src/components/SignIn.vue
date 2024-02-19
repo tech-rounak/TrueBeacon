@@ -33,6 +33,7 @@ import { reactive, ref, toRaw } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
 import { notification } from "ant-design-vue";
+import { getbaseURI} from "./../utils"
 
 const router = useRouter();
 const formRef = ref();
@@ -75,7 +76,8 @@ const onSubmit = () => {
 };
 
 const Login = (formData) => {
-  const url = "http://localhost:8000/users/login";
+  
+  const url = getbaseURI()+"/users/login";
   axios
     .post(url, formData)
     .then((res) => {

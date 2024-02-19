@@ -29,6 +29,7 @@ import { ref, onMounted } from "vue";
 import dayjs from "dayjs";
 import Chart from "chart.js/auto";
 import { notification } from "ant-design-vue";
+import { getbaseURI} from "./../utils"
 
 const symbol = ref("NIFTY-50");
 const range = ref([]);
@@ -96,7 +97,7 @@ const GetStockHistory = () => {
   }
   const startDate = dayjs(range.value[0]).format("YYYY-MM-DD");
   const endDate = dayjs(range.value[1]).format("YYYY-MM-DD");
-  const apiURL = "http://localhost:8000/stock_history";
+  const apiURL = getbaseURI()+"/stock_history";
 
   axios
     .get(apiURL, {
